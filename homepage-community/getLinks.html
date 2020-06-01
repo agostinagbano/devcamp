@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CodePen - getLinks</title>
+<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-4de243a40619a967c0bf13b95e1ac6f8de89d943b7fc8710de33f681fe287604.css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic" rel="stylesheet" />
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - getLinks</title>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body class="">
+<div id="result-iframe-wrap" role="main">
+<iframe id="result" srcdoc="
+<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - getLinks</title>
+  
+  
+  
+  
+<style>
+:root {
+  --green          : hsl(156,75%,50%);
+  --green_lighter  : hsl(156,60%,70%);
+  --darkgrey       : hsl(235,15%,11%);
+  --darkgrey_hint  : hsl(235,25%,20%);
+  --slategrey      : hsl(235,24%,9%);
+  --slategrey_dark : hsl(235,24%,6%);
+  --slategrey_light: hsl(235,24%,75%);
+
+  --shadow1        : 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  --shadow2        : 0 6px 12px 0 rgba(0, 0, 0, 0.25);
+  --border         : hsl(156, 75%, 50%, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color     : var(--green);
+  background: var(--slategrey);
+  font-size : 1.2em;
+  height    : 100%;
+  margin    : 0;
+}
+
+h1 {
+  color      : var(--green);
+  background : var(--slategrey_dark);
+  box-shadow : var(--shadow1),var(--shadow2);
+  padding    : 10px 20px;
+  font-weight: 500;
+  margin     : 0;
+}
+
+.main {
+  display              : grid;
+  grid-gap             : 20px;
+  grid-auto-rows       : 350px 80px;
+  grid-template-columns: repeat(5, 1fr);
+  margin               : 40px 60px;
+}
+
+#copyBtn,
+textarea {
+  grid-column: 2 / 6;
+}
+
+textarea {
+  color      : var(--green_lighter);
+  background : var(--darkgrey);
+  box-shadow : var(--shadow1),var(--shadow2);
+  padding    : 20px 10px 20px 40px;
+  border     : none;
+  line-height: 1.6;
+  font-size  : 14px;
+}
+
+#myfiles,
+#submitBtn {
+  grid-column: 1;
+}
+
+#copyBtn,
+#submitBtn {
+  grid-row: 2;
+}
+
+button {
+  --dark       : hsl(235, 24%, 9%);
+  --light      : hsl(156, 75%, 50%);
+  --border     : hsl(156, 75%, 50%, 0.6);
+  color        : var(--light);
+  background   : var(--dark);
+  border-color : var(--border);
+  border-width : 1px;
+  border-radius: 5px;
+  border-style : solid;
+
+}
+
+button:hover {
+  color     : var(--dark);
+  background: var(--light);
+}
+
+input[type=&quot;file&quot;] {
+	display: none;
+}
+
+#myfiles,
+textarea {
+  grid-row: 1;
+}
+
+#myfiles  {
+  font-size    : 2rem;
+  color        : hsl(236, 10%, 30%);
+  background   : var(--dark);
+  border-color : var(--darkgrey_hint);
+  border-width : 1px;
+  border-radius: 5px;
+  border-style : solid;
+}
+
+#myfiles:hover {
+  border-color: var(--border);
+}
+
+.pulse {
+  animation: pulse 200ms ease-in-out 2 alternate;
+  color    : hsla(217, 89%, 73%, 1);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+  window.open = function(){ console.log(&quot;window.open is disabled.&quot;); };
+  window.print   = function(){ console.log(&quot;window.print is disabled.&quot;); };
+  window.alert   = function(){ console.log(&quot;window.alert is disabled.&quot;); };
+  window.confirm = function(){ console.log(&quot;window.confirm is disabled.&quot;); };
+  window.prompt  = function(){ console.log(&quot;window.prompt is disabled.&quot;); };
+  window.Notification = function() { console.log(&quot;HTML5 notifications are disabled.&quot;); };
+</script>
+
+  
+    <script>
+    (function() {
+      /*
+      * Capture all errors for this pen
+      **/
+      window.onerror = function(/* message, file, line */) {
+        return true;
+      };
+
+      /*
+      * Capture and kill Web Audio and Speech
+      */
+      if (typeof (AudioContext) != &quot;undefined&quot; || typeof (webkitAudioContext) != &quot;undefined&quot;) {
+        AudioContext = function() {
+          return false;
+        };
+
+        webkitAudioContext = function() {
+          return false;
+        };
+      }
+
+      if (typeof (mozAudioContext) != &quot;undefined&quot;) {
+        mozAudioContext = function() {
+          return false;
+        };
+      }
+
+      if (&quot;speechSynthesis&quot; in window) {
+        window.speechSynthesis = {};
+      }
+      if (&quot;speak&quot; in speechSynthesis) {
+        speechSynthesis.speak = function() {
+          return false;
+        };
+      }
+
+      // Kill the browser asking for access to the video cam or audio
+      navigator.getUserMedia = function() {
+      };
+      navigator.mozGetUserMedia = function() {
+      };
+      navigator.webkitGetUserMedia = function() {
+      };
+      navigator.mediaDevices.getUserMedia = function() {
+      };
+
+
+      /**
+      * Capture and kill animations after X number of seconds
+      **/
+      var __animationDuration = 4000;
+      var __animationsTimedOut = false;
+      var __animationRequests = [];
+      var __requestAnimationFrame = false;
+      var __cancelAnimationFrame = false;
+      var x, i;
+
+      var vendorsReqestAnimationFrame = [
+        &quot;requestAnimationFrame&quot;,
+        &quot;mozRequestAnimationFrame&quot;,
+        &quot;webkitRequestAnimationFrame&quot;
+      ];
+
+      // find the browsers requestAnimationFrame and cancelAnimationFrame
+      for (x = 0; x < vendorsReqestAnimationFrame.length; x++) {
+        if (!__requestAnimationFrame) {
+          __requestAnimationFrame = window[vendorsReqestAnimationFrame[x]
+          ];
+        }
+      }
+
+      __cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+
+      // Wrap the requestAnimationFrame so we can stop it in the future
+      function __reqFrame(callback, element) {
+        // after the timeout we no longer take requests
+        var timerID;
+        if (__animationsTimedOut) {
+          return 0;
+        } else {
+          timerID = __requestAnimationFrame(callback, element);
+          __animationRequests.push(timerID);
+
+          return timerID;
+        }
+      }
+
+      for (x = 0; x < vendorsReqestAnimationFrame.length; x++) {
+        window[vendorsReqestAnimationFrame[x]] = __reqFrame;
+      }
+
+      // Cancel the animations after expiration
+      setTimeout(function() {
+        for (i = 0; i < __animationRequests.length; i++) {
+          __cancelAnimationFrame(__animationRequests[i]);
+        }
+
+        var ss = window.document.createElement(&quot;style&quot;);
+        ss.textContent = &quot;*, *::before, *::after { animation-play-state: paused !important; }&quot;;
+        var ref = window.document.getElementsByTagName(&quot;script&quot;)[0];
+        ref.parentNode.insertBefore(ss, ref);
+
+        __animationsTimedOut = true;
+      }, __animationDuration, &quot;push&quot;);
+
+      /**
+      * Capture setInterval and setTimeout to kill after X number of seconds
+      **/
+      window.setInterval = (function(oldSetInterval) {
+        var registered = [];
+
+        function f(a,b) {
+          // check if the time has expired,
+          // after __animationDuration expires don't take anymore setIntervals
+          if (this.timedOut) {
+            return 0;
+          } else {
+            return registered[ registered.length ] = oldSetInterval(a,b);
+          }
+        }
+
+        f.clearAll = function() {
+          var r;
+
+          while (r = registered.pop()) {
+            clearInterval( r );
+          }
+
+          this.timedOut = true;
+        };
+
+        f.timedOut = false;
+
+        return f;
+      }(window.setInterval));
+
+      window.setTimeout = (function(oldSetTimeout) {
+        var registered = [];
+
+        // because some of our timeouts may time out afterwards
+        // we want to make sure they know the secret sauce to still use
+        // setTimeout after the time has expired, thats why we have a
+        // third param
+        function f(a, b, push) {
+          // check if the time has expired,
+          // after __animationDuration expires don't take anymore requests
+          if (this.timedOut &amp;&amp; typeof(push) == &quot;undefined&quot;) {
+            return 0;
+          } else {
+            // If push is there, never clear that interval
+            // so never add it to the registry
+            if (push) {
+              return oldSetTimeout(a,b);
+            } else {
+              return registered[ registered.length ] = oldSetTimeout(a,b);
+            }
+          }
+        }
+
+        f.clearAll = function() {
+          var r;
+
+          while (r = registered.pop()) {
+            clearTimeout( r );
+          }
+
+          this.timedOut = true;
+        };
+
+        f.timedOut = false;
+
+        return f;
+      }(window.setTimeout));
+
+      setTimeout(function() {
+
+        setTimeout.clearAll();
+        setInterval.clearAll();
+
+        // Stop Web Animations API
+        // Idea from Gregor: https://github.com/CodePen/CodePen-Bug-Reporting-Only/issues/173#issuecomment-203443301
+        // Status as of April 2020:
+        //  Chrome 80 = Stops animations
+        //  Firefox 75 = Stops animations
+        //  Safari 13 = Doesn't support WAAPI
+        //  Safari 13.1 = Stops animations
+
+        // Apparently this used to be done via `document.timeline`, but the modern method is to get the animations directly from the document.
+        let animations = ( typeof document.getAnimations === &quot;function&quot; &amp;&amp; document.getAnimations() ) || (document.timeline &amp;&amp; typeof document.timeline.getAnimations === &quot;function&quot; &amp;&amp; document.timeline.getAnimations() )
+
+        if ( animations &amp;&amp; animations.length ) {
+          animations.map(function(animation) {
+            animation.pause();
+          });
+        }
+
+      }, __animationDuration, &quot;push&quot;);
+
+    }());
+  </script>
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate=&quot;no&quot;  onload=&quot;_l='t';&quot;>
+  <h1>getLinks</h1>
+		<main class=&quot;main&quot;>
+			<input id=&quot;fileUpload&quot; type=&quot;file&quot;>
+<button id=&quot;myfiles&quot; type=&quot;button&quot;>upload</button>
+			<textarea id=&quot;textarea&quot; name=&quot;output&quot;></textarea>
+			<button id=&quot;submitBtn&quot;>submit</button>
+			<button id=&quot;copyBtn&quot;>copy</button>
+		</main>
+    <script src=&quot;https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js&quot;></script>
+
+  
+  
+      <script id=&quot;rendered-js&quot; >
+const toJSON = v => JSON.stringify(v, null, 2);
+
+const copyAnim = () => {
+  textarea.className = `right pulse`;
+  textarea.addEventListener(&quot;animationend&quot;, () => {
+    textarea.className = &quot;right&quot;;
+  }, false);
+};
+
+const isLink = v => {
+  v = /(https?:\/\/[\w\d./?=#_-]+)/.exec(v);
+  if (!!v &amp;&amp; v[1]) {return v[1];}
+};
+
+
+const app = {
+  setValue(value = &quot;&quot;) {
+    textarea.value = value;
+  },
+  extractLinks(content) {
+    this.setValue();
+    content = content.trim().split(&quot;\n&quot;);
+    content = content.map(isLink).filter(v => !!v);
+    this.setValue(toJSON(content));
+  },
+  pullfiles() {
+    const file = myfiles.files[0];
+    const reader = new FileReader();
+    reader.onload = e => app.extractLinks(e.target.result);
+    reader.readAsText(file);
+  },
+  copyText(value = textarea.value) {
+    copyAnim();
+    const el = document.createElement(&quot;textarea&quot;);
+    el.value = value;
+    el.setAttribute(&quot;readonly&quot;, &quot;&quot;);
+    el.style.position = &quot;absolute&quot;;
+    el.style.left = &quot;-9999px&quot;;
+    document.body.appendChild(el);
+    const selected = document.getSelection().rangeCount > 0 ?
+    document.getSelection().getRangeAt(0) : false;
+    el.select();
+    document.execCommand(&quot;copy&quot;);
+    document.body.removeChild(el);
+    if (selected) {
+      document.getSelection().removeAllRanges();
+      document.getSelection().addRange(selected);
+    }
+  } };
+
+
+myfiles.onchange = app.pullfiles;
+copyBtn.addEventListener(&quot;click&quot;, () => app.copyText(), false);
+submitBtn.addEventListener(&quot;click&quot;, () => {app.extractLinks(textarea.value);}, false);
+
+textarea.value =
+`# Quickly extract links from text and files using RegExp and FileReader object.\n\n*  Drag &amp; drop - or -  click to browse files -  using the panel on the left\n*  For plain text filtering - just copy and paste text in the textarea - and click submit\n\nResults are formatted as a JSON array and there's a copy button below to make your life easier.\n\n* There's a ton a useful features you can add to this if you want. I just decided to keep it simple.`;
+//# sourceURL=pen.js
+    </script>
+
+    <script style=&quot;display: none !important;&quot;>
+  (function() {
+    var __animationDuration = 4000;
+
+    setTimeout(function() {
+      // If onload hasn't been called, stop all requests after 2 seconds
+      if (typeof(_l) == &quot;undefined&quot;) {
+        if (window.stop !== undefined) window.stop();
+        else if (document.execCommand !== undefined) document.execCommand(&quot;Stop&quot;, false);
+      }
+    }, 2000, &quot;push&quot;);
+
+    /*
+    * Capture and kill CSS animations after X number of seconds
+    */
+    function pauseAnimations() {
+      var body = document.getElementsByTagName(&quot;body&quot;)[0];
+
+      if (body.addEventListener) {
+        body.addEventListener(&quot;webkitAnimationStart&quot;, listener, false);
+        body.addEventListener(&quot;webkitAnimationIteration&quot;, listener, false);
+        body.addEventListener(&quot;animationstart&quot;, listener, false);
+        body.addEventListener(&quot;animationiteration&quot;, listener, false);
+      }
+    }
+
+    function listener(e) {
+
+      var targetEl;
+
+      if (e.type == &quot;webkitAnimationStart&quot; || e.type == &quot;webkitAnimationIteration&quot;) {
+
+        targetEl = e.target;
+
+        setTimeout(function() {
+          targetEl.style.webkitAnimationPlayState = &quot;paused&quot;;
+        }, __animationDuration, &quot;push&quot;);
+
+      } else if (e.type == &quot;animationstart&quot; || e.type == &quot;animationiteration&quot;) {
+
+        targetEl = e.target;
+
+        setTimeout(function() {
+          targetEl.style.MozAnimationPlayState = &quot;paused&quot;;
+        }, __animationDuration, 'push');
+
+      }
+    }
+
+    pauseAnimations();
+
+    // Pause all audio elements, allow the audio/video
+    // elements to render before stopping them
+    function pauseElementTypes(type) {
+      for (var i = 0, els = document.getElementsByTagName(type); i < els.length; i++) {
+        els[i].pause();
+      }
+    }
+
+    // Wait until the elements have been created to pause them
+    setTimeout(function() {
+      pauseElementTypes(&quot;audio&quot;);
+      pauseElementTypes(&quot;video&quot;);
+    }, 100);
+
+  }());
+  </script>
+
+
+  <script src=&quot;https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-e03f509ba0a671350b4b363ff105b2eb009850f34a2b4deaadaa63ed5d970b37.js&quot;></script>
+</body>
+
+</html>
+ 
+" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation  allow-scripts allow-top-navigation-by-user-activation" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+      </iframe>
+</div>
+</body>
+</html>
+
